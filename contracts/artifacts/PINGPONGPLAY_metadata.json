@@ -6,7 +6,13 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_totalSupply",
+						"type": "uint256"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
@@ -188,110 +194,6 @@
 				"type": "event"
 			},
 			{
-				"inputs": [],
-				"name": "COMMUNITY_REWARDS",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "MARKETING_PARTNERSHIP",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "PROJECT_DEVELOPMENT",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "PUBLIC_SALE",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "RESERVE",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "TEAM_FOUNDERS",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "TOTAL_SUPPLY",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "VESTING_DURATION",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -361,12 +263,17 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "value",
-						"type": "uint256"
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isBlacklisting",
+						"type": "bool"
 					}
 				],
-				"name": "burn",
+				"name": "blacklist",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -375,16 +282,30 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "account",
+						"name": "",
 						"type": "address"
-					},
+					}
+				],
+				"name": "blacklists",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "value",
 						"type": "uint256"
 					}
 				],
-				"name": "burnFrom",
+				"name": "burn",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -397,6 +318,45 @@
 						"internalType": "uint8",
 						"name": "",
 						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "limited",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "maxHoldingAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "minHoldingAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -430,14 +390,35 @@
 			},
 			{
 				"inputs": [],
-				"name": "releaseTeamTokens",
+				"name": "renounceOwnership",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "renounceOwnership",
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "_limited",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "_uniswapV2Pair",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_maxHoldingAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_minHoldingAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "setRule",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -450,19 +431,6 @@
 						"internalType": "string",
 						"name": "",
 						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "teamReleased",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -549,12 +517,12 @@
 			},
 			{
 				"inputs": [],
-				"name": "vestingStart",
+				"name": "uniswapV2Pair",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "address",
 						"name": "",
-						"type": "uint256"
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -562,7 +530,6 @@
 			}
 		],
 		"devdoc": {
-			"details": "ERC20 Token con funzionalità di staking, vesting e gestione della liquidità.",
 			"errors": {
 				"ERC20InsufficientAllowance(address,uint256,uint256)": [
 					{
@@ -646,15 +613,6 @@
 				"balanceOf(address)": {
 					"details": "See {IERC20-balanceOf}."
 				},
-				"burn(uint256)": {
-					"details": "Destroys a `value` amount of tokens from the caller. See {ERC20-_burn}."
-				},
-				"burnFrom(address,uint256)": {
-					"details": "Destroys a `value` amount of tokens from `account`, deducting from the caller's allowance. See {ERC20-_burn} and {ERC20-allowance}. Requirements: - the caller must have allowance for ``accounts``'s tokens of at least `value`."
-				},
-				"constructor": {
-					"details": "Costruttore del contratto."
-				},
 				"decimals()": {
 					"details": "Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5.05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the default value returned by this function, unless it's overridden. NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}."
 				},
@@ -663,9 +621,6 @@
 				},
 				"owner()": {
 					"details": "Returns the address of the current owner."
-				},
-				"releaseTeamTokens()": {
-					"details": "Rilascia i token del team secondo il piano di vesting."
 				},
 				"renounceOwnership()": {
 					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
@@ -686,7 +641,6 @@
 					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
 				}
 			},
-			"title": "PingPongPlay",
 			"version": 1
 		},
 		"userdoc": {
@@ -697,7 +651,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/PingPongPlay_flattened.sol": "PingPongPlay"
+			"contracts/PingPongPlay.sol": "PINGPONGPLAY"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -711,11 +665,60 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/PingPongPlay_flattened.sol": {
-			"keccak256": "0x4a74e254e4bf37e8f8ed88567c775104f5843d82b252d87ee4aa680bbfbd922d",
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://5477da14a282f59378d4f48c35de37292a4ee9cb30ba53f5891990ef320af394",
-				"dweb:/ipfs/QmUPqW6aYVpAPkF86QvCWJk6R1AKggzGT7w3Qofhivz1H6"
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/interfaces/draft-IERC6093.sol": {
+			"keccak256": "0x880da465c203cec76b10d72dbd87c80f387df4102274f23eea1f9c9b0918792b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://399594cd8bb0143bc9e55e0f1d071d0d8c850a394fb7a319d50edd55d9ed822b",
+				"dweb:/ipfs/QmbPZzgtT6LEm9CMqWfagQFwETbV1ztpECBB1DtQHrKiRz"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+			"keccak256": "0x6ef9389a2c07bc40d8a7ba48914724ab2c108fac391ce12314f01321813e6368",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b7a5cb39b1e6df68f4dd9a5e76e853d745a74ffb3dfd7df4ae4d2ace6992a171",
+				"dweb:/ipfs/QmPbzKR19rdM8X3PLQjsmHRepUKhvoZnedSR63XyGtXZib"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xe06a3f08a987af6ad2e1c1e774405d4fe08f1694b67517438b467cecf0da0ef7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://df6f0c459663c9858b6cba2cda1d14a7d05a985bed6d2de72bd8e78c25ee79db",
+				"dweb:/ipfs/QmeTTxZ7qVk9rjEv2R4CpCwdf8UMCcRqDNMvzNxHc3Fnn9"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+			"keccak256": "0x70f2f713b13b7ce4610bcd0ac9fec0f3cc43693b043abcb8dc40a42a726eb330",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c13d13304ac79a83ab1c30168967d19e2203342ebbd6a9bbce4db7550522dcbf",
+				"dweb:/ipfs/QmeN5jKMN2vw5bhacr6tkg78afbTTZUeaacNHqjWt4Ew1r"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"contracts/PingPongPlay.sol": {
+			"keccak256": "0x08b817f672cebc607cd833470753ed9309a8c17e0ac23eb7f0f64d529fbb030d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://63331f0da9137a44687892cf412b467e4def039d790147802056d2e30d3da16d",
+				"dweb:/ipfs/QmeXgvLZz5pVD5BvmFn4WKxtWbHAvrWyp8EbNH3MZ1JC9P"
 			]
 		}
 	},

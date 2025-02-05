@@ -6,11 +6,6 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -97,28 +92,6 @@
 				"type": "error"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					}
-				],
-				"name": "OwnableInvalidOwner",
-				"type": "error"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "account",
-						"type": "address"
-					}
-				],
-				"name": "OwnableUnauthorizedAccount",
-				"type": "error"
-			},
-			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -149,25 +122,6 @@
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "previousOwner",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "newOwner",
-						"type": "address"
-					}
-				],
-				"name": "OwnershipTransferred",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
 						"name": "from",
 						"type": "address"
 					},
@@ -186,110 +140,6 @@
 				],
 				"name": "Transfer",
 				"type": "event"
-			},
-			{
-				"inputs": [],
-				"name": "COMMUNITY_REWARDS",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "MARKETING_PARTNERSHIP",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "PROJECT_DEVELOPMENT",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "PUBLIC_SALE",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "RESERVE",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "TEAM_FOUNDERS",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "TOTAL_SUPPLY",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "VESTING_DURATION",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
 			},
 			{
 				"inputs": [
@@ -359,37 +209,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "value",
-						"type": "uint256"
-					}
-				],
-				"name": "burn",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "account",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "value",
-						"type": "uint256"
-					}
-				],
-				"name": "burnFrom",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "decimals",
 				"outputs": [
@@ -417,52 +236,12 @@
 			},
 			{
 				"inputs": [],
-				"name": "owner",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "releaseTeamTokens",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "renounceOwnership",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "symbol",
 				"outputs": [
 					{
 						"internalType": "string",
 						"name": "",
 						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "teamReleased",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -533,36 +312,10 @@
 				],
 				"stateMutability": "nonpayable",
 				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "newOwner",
-						"type": "address"
-					}
-				],
-				"name": "transferOwnership",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "vestingStart",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
 			}
 		],
 		"devdoc": {
-			"details": "ERC20 Token con funzionalità di staking, vesting e gestione della liquidità.",
+			"details": "Implementation of the {IERC20} interface. This implementation is agnostic to the way tokens are created. This means that a supply mechanism has to be added in a derived contract using {_mint}. TIP: For a detailed writeup see our guide https://forum.openzeppelin.com/t/how-to-implement-erc20-supply-mechanisms/226[How to implement supply mechanisms]. The default value of {decimals} is 18. To change this, you should override this function so it returns a different value. We have followed general OpenZeppelin Contracts guidelines: functions revert instead returning `false` on failure. This behavior is nonetheless conventional and does not conflict with the expectations of ERC-20 applications.",
 			"errors": {
 				"ERC20InsufficientAllowance(address,uint256,uint256)": [
 					{
@@ -615,16 +368,6 @@
 							"spender": "Address that may be allowed to operate on tokens without being their owner."
 						}
 					}
-				],
-				"OwnableInvalidOwner(address)": [
-					{
-						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
-					}
-				],
-				"OwnableUnauthorizedAccount(address)": [
-					{
-						"details": "The caller account is not authorized to perform an operation."
-					}
 				]
 			},
 			"events": {
@@ -646,29 +389,14 @@
 				"balanceOf(address)": {
 					"details": "See {IERC20-balanceOf}."
 				},
-				"burn(uint256)": {
-					"details": "Destroys a `value` amount of tokens from the caller. See {ERC20-_burn}."
-				},
-				"burnFrom(address,uint256)": {
-					"details": "Destroys a `value` amount of tokens from `account`, deducting from the caller's allowance. See {ERC20-_burn} and {ERC20-allowance}. Requirements: - the caller must have allowance for ``accounts``'s tokens of at least `value`."
-				},
 				"constructor": {
-					"details": "Costruttore del contratto."
+					"details": "Sets the values for {name} and {symbol}. All two of these values are immutable: they can only be set once during construction."
 				},
 				"decimals()": {
 					"details": "Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5.05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the default value returned by this function, unless it's overridden. NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}."
 				},
 				"name()": {
 					"details": "Returns the name of the token."
-				},
-				"owner()": {
-					"details": "Returns the address of the current owner."
-				},
-				"releaseTeamTokens()": {
-					"details": "Rilascia i token del team secondo il piano di vesting."
-				},
-				"renounceOwnership()": {
-					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
 				},
 				"symbol()": {
 					"details": "Returns the symbol of the token, usually a shorter version of the name."
@@ -681,12 +409,8 @@
 				},
 				"transferFrom(address,address,uint256)": {
 					"details": "See {IERC20-transferFrom}. Skips emitting an {Approval} event indicating an allowance update. This is not required by the ERC. See {xref-ERC20-_approve-address-address-uint256-bool-}[_approve]. NOTE: Does not update the allowance if the current allowance is the maximum `uint256`. Requirements: - `from` and `to` cannot be the zero address. - `from` must have a balance of at least `value`. - the caller must have allowance for ``from``'s tokens of at least `value`."
-				},
-				"transferOwnership(address)": {
-					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
 				}
 			},
-			"title": "PingPongPlay",
 			"version": 1
 		},
 		"userdoc": {
@@ -697,7 +421,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/PingPongPlay_flattened.sol": "PingPongPlay"
+			"contracts/PingPongPlay_flattened.sol": "ERC20"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -712,10 +436,11 @@
 	},
 	"sources": {
 		"contracts/PingPongPlay_flattened.sol": {
-			"keccak256": "0x4a74e254e4bf37e8f8ed88567c775104f5843d82b252d87ee4aa680bbfbd922d",
+			"keccak256": "0x17588c128693537d5a0db107ff82653a743735edcf3a5bee934290027078b86b",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://5477da14a282f59378d4f48c35de37292a4ee9cb30ba53f5891990ef320af394",
-				"dweb:/ipfs/QmUPqW6aYVpAPkF86QvCWJk6R1AKggzGT7w3Qofhivz1H6"
+				"bzz-raw://395378feed682415597cc6bd0c3de9bbe7f09c99f71aca3fffaf78cf392d8978",
+				"dweb:/ipfs/QmXdQ4Vspweqz6TRAy9C95L9PCtghZ83rmNxvq4yxwnyby"
 			]
 		}
 	},
